@@ -5,6 +5,7 @@ const express=require('express');
 const cookieParser=require('cookie-parser');
 const cors=require('cors');
 const userRoutes=require('./routes/user.routes')
+const captainRoutes=require('./routes/captain.routes')
 const app=express();
 //const port=process.env.PORT || 3000;
 
@@ -21,7 +22,9 @@ app.get('/',(req,res)=>{
 })
 
 
-app.use('/users',userRoutes)
+app.use('/users',userRoutes);
+
+app.use('/captains',captainRoutes);
 
 
 module.exports=app;
